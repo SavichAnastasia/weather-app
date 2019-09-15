@@ -53,7 +53,7 @@ span {
     border: 1px solid #FF0000;
 }
 
-.error_message {
+.error-message {
     color: red;
     height: 20px;
 }

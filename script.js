@@ -1,6 +1,6 @@
 const form = document.querySelector('form');
 const input = document.querySelector('.field');
-const error_message = document.querySelector('.error_message');
+const errorMessage = document.querySelector('.error-message');
 
 const URL_WEATHER = "https://api.apixu.com/v1/current.json";
 const KEY_WEATHER = "26d10df7710a4383bda172954190909"
@@ -19,11 +19,11 @@ L.control.scale().addTo(map);
 form.addEventListener('submit', async function (e) {
   e.preventDefault();
   
-  let city = input.value;
+  let cityName = input.value;
 
-  if (!city) {
+  if (!cityName) {
     input.classList.add('red');
-    error_message.innerHTML = 'type a city';
+    errorMessage.innerHTML = 'type a city';
     return;
   }
 
@@ -32,13 +32,13 @@ form.addEventListener('submit', async function (e) {
   }
 
   try {
-    const data = await fetch(`${URL_WEATHER}?key=${KEY_WEATHER}&q=${city}`);
+    const data = await fetch(`${URL_WEATHER}?key=${KEY_WEATHER}&q=${cityName}`);
     const parsedData = await data.json();
     const { current: { condition: { icon }, temp_c}, location: { name, lon, lat } } = parsedData;
     await map.setView([lat, lon], 7);
     marker = await L.marker([lat, lon]).addTo(map).bindPopup(`${name}: ${temp_c}&deg<img src="https:${icon}">`).openPopup();
   } catch (err) {
-   error_message.innerHTML = 'incorrect city name';
+   errorMessage.innerHTML = 'incorrect city name';
   }
 });
 
@@ -46,5 +46,5 @@ input.addEventListener('input', function () {
   if (this.classList.contains('red')) {
     this.classList.remove('red');
   }
-  error_message.innerHTML = ''
+  errorMessage.innerHTML = ''
 })
