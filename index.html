@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link href="https://leafletjs-cdn.s3.amazonaws.com/content/leaflet/master/leaflet.css" rel="stylesheet" type="text/css"/>
+    <link rel='stylesheet' href='style.css'>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width">
+    <title>Weather App</title>
+</head>
+<body>
+    <div class="wrapper">
+        <form>
+            <span>Type a city</span>
+            <input type="text" class="field" placeholder="city">
+            <input type="submit" class="btn" value="Find">
+        </form>
+        <div class="error-message"></div>
+        <div id="map"></div>
+    </div>
+    <script type="text/javascript" src="https://leafletjs-cdn.s3.amazonaws.com/content/leaflet/master/leaflet.js"></script>
+    <script type="text/javascript" src="https://tiles.unwiredmaps.com/js/leaflet-unwired.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
