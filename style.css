@@ -18,11 +18,20 @@ form {
     align-items: center;
     display: flex;
     width: 100%;
+    height: 20%;
     justify-content: center;
 }
 
 form * {
     margin: 0 5px;
+}
+
+.main {
+    align-items: flex-start;
+    display: flex;
+    width: 100%;
+    height: 80%;
+    justify-content: space-around; 
 }
   
 span {
@@ -31,22 +40,68 @@ span {
 }
   
 #map {
-    display: flex;
-    width: 80%;
-    height: 60%;  
+    width: 63%;
+    height: 90%;  
     border: 2px solid #CD853F;
     border-radius: 5px;
     margin-top: 10px;
+}
+
+.my-weather {
+    width: 33%;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.my-weather-buttons {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+}
+
+.search-history-table {
+    border-collapse: collapse;
+    display: none;
+    color: #CD853F;
+    text-align: center;
+}
+
+.search-history-table.active {
+    display: block;
+}
+
+.search-history-table th {
+    background: #F5DEB3;
+    border: 2px solid #8B4513;
+    padding: 5px;
+}
+
+.search-history-table td {
+    background: #ffffff;
+    border: 2px solid #8B4513;
+    padding: 5px;
 }
 
 .btn {
     background: #CD853F;
     border: 0px;
     border-radius: 5px;
-    width: 50px;
-    height: 25px;
+    padding: 8px;
     color: #F5DEB3;
     outline: none;
+    cursor: pointer;
+    margin: 8px;
+}
+
+.search-history.active {
+    opacity: .7;
+}
+
+.btn:hover {
+   opacity: .7;
 }
 
 .field.red {

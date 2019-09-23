@@ -13,12 +13,43 @@
             <span>Type a city</span>
             <input type="text" class="field" placeholder="city">
             <input type="submit" class="btn" value="Find">
+            <div class="error-message"></div>
         </form>
-        <div class="error-message"></div>
-        <div id="map"></div>
+        <div class="main">
+            <div id="map"></div>
+            <div class="my-weather">
+                <div class="my-weather-buttons">
+                    <button class="btn get-my-weather">Get the weather in my town</button>
+                    <button class="btn search-history">Search history</button>
+                    <button class="btn clear-search-history">Clear history</button>
+                </div>
+                <table class="search-history-table">
+                    <thead>
+                        <tr>
+                            <th>
+                                City
+                            </th>
+                            <th>
+                                Country
+                            </th>
+                            <th>
+                                t, &degC
+                            </th>
+                            <th>
+                                wind speed, m/s
+                            </th>
+                            <th>
+                                description
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody class="search-history-table-body"></tbody>
+                </table>
+            </div>
+        </div>
     </div>
     <script type="text/javascript" src="https://leafletjs-cdn.s3.amazonaws.com/content/leaflet/master/leaflet.js"></script>
     <script type="text/javascript" src="https://tiles.unwiredmaps.com/js/leaflet-unwired.js"></script>
-    <script src="script.js"></script>
+    <script src="./public/bundle.js"></script>
 </body>
 </html>
