@@ -1,0 +1,6 @@
+.idea/
+node_modules/
+temp/
+logs
+*.log
+npm-debug.log*

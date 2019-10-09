@@ -15,23 +15,26 @@ function clearMyHistory () {
 }
 
 function addMyHistory (newItem) {
-    checkUniqueKey(myHistoryData, newItem);
-    localStorage.setItem('myHistoryData', JSON.stringify(myHistoryData));
+    localStorage.setItem('myHistoryData', JSON.stringify(checkUniqueKey(myHistoryData, newItem)));
+    myHistoryData = checkUniqueKey(myHistoryData, newItem);
 }
+
+const getCurrentHistoryData = () => myHistoryData;          
 
 function checkUniqueKey (arr, newItem) {
     let needToPush = true;
-    arr.forEach((item, i) => {
+    let newArr = arr.map((item) => {
         if (item.name === newItem.name) {
-        arr.splice(i, 1, newItem);
-        needToPush = false;
-        }
-    });
+            needToPush = false;
+            return newItem;
+        } else return item;
+        })
     if (needToPush) {
-        arr.push(newItem);
+        newArr.push(newItem);
     }
+    return newArr;
 };
 
 clearSearchHistoryBtn.addEventListener('click', clearMyHistory); 
 
-module.exports = { addMyHistory, myHistoryData, clearMyHistory };
+module.exports = { addMyHistory, getCurrentHistoryData, clearMyHistory };

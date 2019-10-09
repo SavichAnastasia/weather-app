@@ -1,16 +1,14 @@
-const getWeather = require('./getWeatherFunc');
-
-async function getMyWeather () {
+async function getMyLocation () {
     try {
       const getLocation = new Promise((res, rej) => {
         navigator.geolocation.getCurrentPosition(res, rej)
       })
       
       const { coords: { latitude, longitude } } = await getLocation;
-      getWeather(`${latitude}, ${longitude}`);
+      return `${latitude}, ${longitude}`;
     } catch (err) {
       alert('your location is not defined');
     }
 }
     
-module.exports = getMyWeather;
+module.exports = getMyLocation;
