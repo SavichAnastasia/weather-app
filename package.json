@@ -17,6 +17,6 @@
   },
   "homepage": "https://github.com/SavichAnastasia/weather-app#readme",
   "devDependencies": {
-    "webpack": "^4.41.0"
+    "webpack": "^5.75.0"
   }
 }
